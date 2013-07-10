@@ -9,10 +9,10 @@ app.get('/', function(request, response) {
 
 var buffer = new Buffer(100);
 buffer = fs.readFileSync('index.html','utf8');
-console.log (buffer.toString("utf-8", 0, 12));
+//console.log (buffer.toString("utf-8", 0, 12));
 
 
-  response.send('Hello World 2!');
+  response.send(buffer.toString("utf-8", 0, 12));
 });
 
 var port = process.env.PORT || 5000;
