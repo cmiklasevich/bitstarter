@@ -22,6 +22,9 @@ References:
 */
 
 var fs = require('fs');
+var sys = require('util');
+// added restler for url handling
+var rest = require('restler');
 var program = require('commander');
 var cheerio = require('cheerio');
 var HTMLFILE_DEFAULT = "index.html";
@@ -36,8 +39,24 @@ var assertFileExists = function(infile) {
     return instr;
 };
 
+var urlExists = function(infile) {
+    var instr = infile.toString();
+// need url validation here if possible
+    return instr;
+};
+
 var cheerioHtmlFile = function(htmlfile) {
-    return cheerio.load(fs.readFileSync(htmlfile));
+// need to come up with better way to size this buffer
+    var buffer = new Buffer(5000);
+    rest.get(htmlfile).on('complete', function(result) {
+    if (result instanceof Error) {
+      sys.puts('Error: ' + result.message);
+      this.retry(5000); // try again after 5 sec
+    } 
+    else {
+        buffer = result;
+    }});
+    return cheerio.load(buffer);
 };
 
 var loadChecks = function(checksfile) {
@@ -63,10 +82,10 @@ var clone = function(fn) {
 
 if(require.main == module) {
     program
-        .option('-f, --file <html_file>', 'Path to index.html', clone(assertFileExists), HTMLFILE_DEFAULT)
-        .option('-c, --checks <check_file>', 'Path to checks.json', clone(assertFileExists), CHECKSFILE_DEFAULT)
+        .option('--checks <check_file>', 'Path to checks.json', clone(assertFileExists), CHECKSFILE_DEFAULT)
+        .option('--url <html_file>', 'Path to url', clone(urlExists), HTMLFILE_DEFAULT)
         .parse(process.argv);
-    var checkJson = checkHtmlFile(program.file, program.checks);
+    var checkJson = checkHtmlFile(program.url, program.checks);
     var outJson = JSON.stringify(checkJson, null, 4);
     console.log(outJson);
 } else {
