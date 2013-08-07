@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title><ul>My First Bitstarter<ul></title>
+    <title>My First Bitstarter</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap-combined.no-icons.min.css">
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css">
@@ -145,8 +145,6 @@
       </div>
       <div class="row-fluid pitch">
         <div class="span5 offset1 video">
-<!--          <img class="img-polaroid" src="http://placehold.it/480x300">
- -->
           <video width="480" height="300" controls autoplay>
             <source src="media/carpoolBuddies.mp4" type="video/mp4">
             Your browser does not support the video tag.
@@ -155,14 +153,15 @@
 
         <!-- We define a new 'actions' div to contain statistics, order, and share buttons.-->
         <div class="span5 actions">
+          <div class="row-fluid">
           <div class="span8 offset2">
-            <div class="statistics">
+            <div class="row-fluid statistics">
               <div class="span4">
                 <!-- linediv-l and linediv-r give dividing lines that look
                 different in horizontal and vertical layouts, illustrating
                 media queries. -->
                 <div class="linediv-l">
-                <h3>0</h3> <p>backers</p>
+                <h3>10</h3> <p>backers</p>
                 </div>
               </div>
               <div class="span4">
@@ -177,6 +176,7 @@
               </div>
             </div>
           </div>
+          <div class="row-fluid">
           <div class="span10 offset1">
             <!-- Bootstrap progress bar -->
             <!-- http://twitter.github.io/bootstrap/components.html#progress -->
@@ -185,17 +185,23 @@
               <div class="bar bar-warning" style="width: 40%;"></div>
             </div>
           </div>
+          </div>
+          <div class="row-fluid">
           <div class="span6 offset3 order">
             <!-- Standard Bootstrap button. -->
             <!-- http://twitter.github.io/bootstrap/base-css.html#buttons -->
             <button class="btn btn-success btn-large">Preorder</button>
           </div>
+          </div>
+          <div class="row-fluid">
           <div class="span8 offset2 social">
             <!-- Social buttons are not included in default Bootstrap. -->
             <!-- See: http://noizwaves.github.io/bootstrap-social-buttons -->
             <button class="btn btn-twitter"><i class="icon-twitter"></i> | Twitter</button>
             <button class="btn btn-facebook"><i class="icon-facebook"></i> | Facebook</button>
           </div>
+          </div>
+        </div>
         </div>
       </div>
 
@@ -205,12 +211,11 @@
       <!-- http://placehold.it -->
       <div class="row-fluid section1">
         <div class="span5 offset1 asset">
-<!--          <img class="img-polaroid" src="http://placehold.it/480x300">-->
           <img src="media/carpoolPic.jpg">
         </div>
         <div class="span5 copy">
           <p>
-	    Despite the steady decline in family size, according to the 2012 census, average American families still have 2 children per household. Many children has more than 2 activities after school. The parents are reluctantly spending many hours chauffeuring children all over the town until all the activities are done for the day. Carpooling for children's activities is a must for many parents, expecially for working parents who needs the transportation means for their children after school. The most carpool scheduling is done by email exchanges and phone calls, rather ineffiently, resulting a list of drivers and their driving dates. Some may opt to use a sign up software program but it is not cater to the carpooling needs for the parents.
+           Despite the steady decline in family size, according to the 2012 census, average American families still have 2 children per household. Many children has more than 2 activities after school. The parents are reluctantly spending many hours chauffeuring children all over the town until all the activities are done for the day. Carpooling for children's activities is a must for many parents, expecially for working parents who needs the transportation means for their children after school. The most carpool scheduling is done by email exchanges and phone calls, rather ineffiently, resulting a list of drivers and their driving dates. Some may opt to use a sign up software program but it is not cater to the carpooling needs for the parents. 
           </p>
         </div>
       </div>
@@ -225,16 +230,14 @@ The integrated solution for carpool scheduling and follow-up cares to assist bus
 <li>Simple way to create carpooling events/activities.</li>
 <li>Automaticlly send invitation to the other carpooling familes
 and gather carpooling preference from everyone.</li>
-<li>Based on everyone's preference, generate a carpool schedule. 
- Everyone has a chance to review and update the carpool schedule until approved.</li> 
+<li>Based on everyone's preference, generate a carpool schedule.
+ Everyone has a chance to review and update the carpool schedule until approved.</li>
 <li>Once it's approved, generate the best carpool routing and option for navigation.</li>
 <li>An email reminder to drivers and riders. An optional SMS or voice message reminder available. This option can be used for older kids with their mobile devices to remind them to get ready to be picked up!</li>
-<li>In case of emergency (i.e. flat tire, unexpected traffic jam), send an optional SMS or voice message to drivers and riders for any last-minute alerts.</li>
-
           </p>
         </div>
         <div class="span5 asset">
-          <img src="media/prodPic.jpg">
+          <img class="img-polaroid"  alt="Placeholder" src="http://placehold.it/480x300">
         </div>
       </div>
 
@@ -262,12 +265,13 @@ and gather carpooling preference from everyone.</li>
                 <div class="accordion-heading">
                   <a class="accordion-toggle" data-toggle="collapse"
                      data-parent="#accordion2" href="#collapseTwo">
-                   How does a voice reminder work? 
+                   How does a voice reminder work?
                   </a>
                 </div>
                 <div id="collapseTwo" class="accordion-body collapse">
                   <div class="accordion-inner">
                     We use Twillow's voice message. If you want this function, you must sign up for a free Twillow account.
+
                   </div>
                 </div>
               </div>
@@ -290,4 +294,3 @@ and gather carpooling preference from everyone.</li>
     </div>
   </body>
 </html>
-
